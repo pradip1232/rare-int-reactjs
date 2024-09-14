@@ -1,0 +1,45 @@
+/* Style the Navbar */
+.custom-navbar {
+    background-color: black !important; /* Set background to black */
+}
+
+.custom-navbar .brand {
+    font-size: 1.5rem;
+    color: white !important;
+    text-align: center;
+}
+
+.custom-navbar .nav-link-custom {
+    color: white !important; /* Ensure the text color is white */
+    /* font-size: 1.1rem; */
+    text-decoration: none;
+    text-align: center;
+    margin: 0 15px;
+}
+
+.custom-navbar .nav-link-custom:hover {
+    color: #ddd !important; /* Change the hover effect */
+}
+
+/* Center the Nav Links */
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Toggle Icon for Small Screens */
+.navbar-toggler {
+    border-color: white;
+}
+
+@media (max-width: 992px) {
+    .navbar-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-link-custom {
+        margin: 10px 0;
+    }
+}

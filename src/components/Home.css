@@ -1,0 +1,285 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.about-us-btn {
+    padding: 15px;
+    background-color: white;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+/* Header Section */
+.first-section {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.first-section video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+}
+
+.overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+.overlay-content h1 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.overlay-content p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* 
+.first-section h1 {
+    font-size: 4rem;
+    font-weight: bold;
+} */
+
+.first-section p {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.fw-bold1 {
+    font-size: 2rem!important;
+    font-weight: 400!important;
+    text-transform: uppercase;
+
+}
+
+.services h3,h2{
+    font-size: 2rem!important;
+    text-transform: uppercase;
+
+
+}
+
+
+
+
+.portfolio h2{
+    font-size: 2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+
+}
+
+
+
+.meet-team h2{
+    font-size: 3rem;
+    text-transform: uppercase;
+
+}
+.meet-team h1{
+    font-size: 2rem;
+}
+
+
+
+
+
+
+
+
+
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+nav ul li a:hover {
+    color: #ddd;
+}
+
+/* Main Content Sections */
+section {
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.services {
+    background: #f4f4f4;
+}
+
+.services h2,
+.portfolio h2,
+.testimonials h2,
+.blog-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.services .service-box {
+    display: inline-block;
+    width: 30%;
+    padding: 1.5rem;
+    margin: 1.5rem;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Portfolio */
+.portfolio {
+    background: #fff;
+}
+
+.portfolio img {
+    width: 30%;
+    height: auto;
+    margin: 10px;
+}
+
+/* Testimonials */
+.testimonials {
+    background-color: #f4f4f4;
+    padding: 4rem 2rem;
+}
+
+.testimonials .testimonial {
+    /* width: 30%; */
+    margin: 1.5rem auto;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.testimonial h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Blog Section */
+.blog-section {
+    padding: 3rem 2rem;
+}
+
+.blog-post {
+    display: inline-block;
+    width: 30%;
+    margin: 1.5rem;
+    background: white;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post img {
+    width: 100%;
+    height: auto;
+}
+
+.blog-post h3 {
+    font-size: 1.8rem;
+    margin-top: 1rem;
+}
+
+/* Call to Action */
+.cta {
+    background: #333;
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.cta a {
+    padding: 1rem 2rem;
+    background-color: #ff6600;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* styles.css */
+.portfolio {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .portfolio img {
+    width: 100%;
+    height: auto;
+  }
+  
