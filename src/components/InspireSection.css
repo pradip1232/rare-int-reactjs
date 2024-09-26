@@ -1,0 +1,51 @@
+/* InspireSection.css */
+.inspire-section p {
+    color: white;
+}
+.inspire-section {
+    height: 100vh;
+    background-image: url('https://wp-themes.com/wp-content/themes/inspiro/assets/images/StockSnap_89BQZ89TLH.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* Makes the background fixed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+/* 
+.inspire-content p{
+    color: white;
+} */
+.inspire-content p,
+h2 {
+    color: white;
+}
+
+.inspire-content {
+    color: white;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.inspire-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-button {
+    padding: 10px 20px;
+    border: 2px solid white;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.contact-button:hover {
+    background-color: white;
+    color: black;
+}

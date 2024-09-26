@@ -1,32 +1,98 @@
 import React from "react";
-import {
-  Card,
-  CardContent,
-  Grid,
-  Typography,
-  useMediaQuery,
-} from "@mui/material";
+import { Typography } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import Slider from "react-slick"; // Import the react-slick component
 
-const AnimatedCard = styled(Card)(({ theme }) => ({
-  transition: "transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
-  "&:hover": {
-    transform: "scale(1.05)",
-    boxShadow: theme.shadows[10],
+import first from "./images/5 (1).webp";
+import second from "./images/6 (1).webp";
+import third from "./images/7 (1).webp";
+import fourth from "./images/8 (1).webp";
+import fifth from "./images/9 (1).webp";
+
+// Import slick-carousel CSS
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+const ImageContainer = styled("div")(({ theme }) => ({
+  position: "relative",
+  overflow: "hidden",
+  height: "400px", // Set height to ensure all images are the same size
+  "& img": {
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    transition: "transform 0.3s ease-in-out",
   },
-  textAlign: "center",
-  padding: theme.spacing(2),
+  "&:hover img": {
+    transform: "scale(1.05)", // Zoom effect on hover
+  },
+  "& .text-overlay": {
+    position: "absolute",
+    bottom: "0",
+    left: "0",
+    width: "100%",
+    padding: theme.spacing(2),
+    color: "#fff",
+    textAlign: "left",
+    transition: "background 0.3s ease-in-out",
+  },
+}));
+
+// Styled component for the button (border removed)
+const ExploreButton = styled("a")(({ theme }) => ({
+  display: "inline-block",
+  padding: "8px 16px",
+  color: "#fff",
+  fontSize: "14px",
+  fontWeight: "bold",
+  textDecoration: "none",
+  backgroundColor: "transparent", // Remove border and background
+  position: "relative",
+  overflow: "hidden",
+  transition: "all 0.3s ease-in-out",
+  cursor: "pointer",
+  "&::after": {
+    content: "'→'", // Right arrow
+    position: "absolute",
+    right: "-20px",
+    opacity: "0",
+    transition: "all 0.3s ease-in-out",
+  },
+  "&:hover": {
+    transform: "translateX(10px)", // Move the button slightly on hover
+  },
+  "&:hover::after": {
+    right: "10px", // Show the arrow on hover
+    opacity: "1",
+  },
 }));
 
 const ServicesSection = () => {
-  const isMobile = useMediaQuery("(max-width:600px)");
+  // Slick slider settings
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3, // Show 3 slides at a time
+    slidesToScroll: 1, // Scroll 1 slide at a time
+    autoplay: true,
+    autoplaySpeed: 3000,
+    responsive: [
+      {
+        breakpoint: 960, // Adjust to 1 image for smaller screens
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
 
   return (
     <section className="services">
-      <Typography variant="h3" gutterBottom>
+      <Typography variant="h3" className="text-left" gutterBottom>
         LET’S WORK TOGETHER!
       </Typography>
-      <Typography variant="h2" gutterBottom>
+      <Typography variant="h2" gutterBottom style={{ color: "black" }}>
         Our Services
       </Typography>
       <Typography variant="body1" paragraph>
@@ -39,44 +105,64 @@ const ServicesSection = () => {
         can transform your space into an extraordinary experience.
       </Typography>
 
-      <Grid container spacing={4} justifyContent="center">
-        <Grid item xs={12} sm={4}>
-          <AnimatedCard>
-            <CardContent>
+      {/* Slick Slider */}
+      <Slider {...settings}>
+        <div>
+          <ImageContainer>
+            <img src={first} alt="Web Design" />
+            <div className="text-overlay">
               <Typography variant="h5" gutterBottom>
-                Web Design
+                Interior & Fit-out
               </Typography>
-              <Typography variant="body2">
-                We provide modern web design services.
-              </Typography>
-            </CardContent>
-          </AnimatedCard>
-        </Grid>
-        <Grid item xs={12} sm={4}>
-          <AnimatedCard>
-            <CardContent>
+              <ExploreButton>Explore Further</ExploreButton>
+            </div>
+          </ImageContainer>
+        </div>
+        <div>
+          <ImageContainer>
+            <img src={second} alt="Customized Furniture" />
+            <div className="text-overlay">
               <Typography variant="h5" gutterBottom>
-                Photography
+                Customized Furniture
               </Typography>
-              <Typography variant="body2">
-                Capture moments with our photography services.
-              </Typography>
-            </CardContent>
-          </AnimatedCard>
-        </Grid>
-        <Grid item xs={12} sm={4}>
-          <AnimatedCard>
-            <CardContent>
+              <ExploreButton>Explore Further</ExploreButton>
+            </div>
+          </ImageContainer>
+        </div>
+        <div>
+          <ImageContainer>
+            <img src={third} alt="Exhibition" />
+            <div className="text-overlay">
               <Typography variant="h5" gutterBottom>
-                Video Production
+                Exhibition
               </Typography>
-              <Typography variant="body2">
-                Professional video production for all needs.
+              <ExploreButton>Explore Further</ExploreButton>
+            </div>
+          </ImageContainer>
+        </div>
+        <div>
+          <ImageContainer>
+            <img src={fifth} alt="Photography" />
+            <div className="text-overlay">
+              <Typography variant="h5" gutterBottom>
+                Put the content in the same manner.{" "}
               </Typography>
-            </CardContent>
-          </AnimatedCard>
-        </Grid>
-      </Grid>
+              <ExploreButton>Explore Further</ExploreButton>
+            </div>
+          </ImageContainer>
+        </div>
+        <div>
+          <ImageContainer>
+            <img src={fourth} alt="Video Production" />
+            <div className="text-overlay">
+              <Typography variant="h5" gutterBottom>
+                Packaging{" "}
+              </Typography>
+              <ExploreButton>Explore Further</ExploreButton>
+            </div>
+          </ImageContainer>
+        </div>
+      </Slider>
     </section>
   );
 };

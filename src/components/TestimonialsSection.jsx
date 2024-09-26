@@ -37,7 +37,7 @@ const TestimonialsSection = () => {
   return (
     <section className="testimonials py-5">
       <Container>
-        <Typography variant="h2" align="center" gutterBottom>
+        <Typography variant="h2" align="center" gutterBottom style={{color:'black'}}>
           What Our Clients Say
         </Typography>
         <Grid container spacing={4}>

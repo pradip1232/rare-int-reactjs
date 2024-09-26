@@ -1,31 +1,41 @@
 /* Style the Navbar */
 .custom-navbar {
-    background-color: black !important; /* Set background to black */
+    transition: background-color 0.3s ease-in-out;
+    /* Smooth transition on scroll */
 }
 
 .custom-navbar .brand {
     font-size: 1.5rem;
     color: white !important;
-    text-align: center;
+    font-weight: bold;
+    text-align: left;
 }
 
 .custom-navbar .nav-link-custom {
-    color: white !important; /* Ensure the text color is white */
-    /* font-size: 1.1rem; */
+    color: white !important;
     text-decoration: none;
-    text-align: center;
     margin: 0 15px;
 }
 
 .custom-navbar .nav-link-custom:hover {
-    color: #ddd !important; /* Change the hover effect */
+    color: #ddd !important;
 }
 
-/* Center the Nav Links */
 .navbar-nav {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     width: 100%;
+}
+
+.search-button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    margin-right: 10px;
+}
+
+.search-button:hover {
+    color: #ddd;
 }
 
 /* Toggle Icon for Small Screens */

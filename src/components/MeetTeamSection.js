@@ -25,7 +25,7 @@ const MeetTeamSection = () => {
     <section className="meet-team py-5">
       <Container>
         <div className="text-center mb-4">
-          <Typography variant="h2">MEET US Our Team</Typography>
+          <Typography variant="h2" style={{ color: 'black' }}>MEET US Our Team</Typography>
         </div>
         <Grid container spacing={4}>
           {teamMembers.map((member, index) => (

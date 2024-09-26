@@ -20,8 +20,10 @@ const BlackSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
             >
-              <Typography variant="h2">Get in Touch</Typography>
-              <Typography variant="body1">Lorem ips</Typography>
+              <Typography variant="h2">FROM THE PORTFOLIO
+
+              </Typography>
+              <Typography variant="body1">Our Work</Typography>
             </AnimatedText>
           </Grid>
         </Grid>

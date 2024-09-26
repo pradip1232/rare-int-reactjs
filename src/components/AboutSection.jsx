@@ -13,7 +13,7 @@ const AboutSection = () => {
       <Container>
         <Grid container spacing={4} alignItems="center" mb={5}>
           <Grid item md={6}>
-            <Typography variant="h2">About Us</Typography>
+            <Typography variant="h2" style={{color:'black'}}>About Us</Typography>
             <Typography paragraph>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ipsa unde saepe in incidunt impedit
               error, dolores voluptates exercitationem enim perferendis delectus molestias vel aperiam
@@ -45,8 +45,8 @@ const AboutSection = () => {
               style={{ width: '100%', height: 'auto' }}
             />
           </Grid>
-          <Grid item md={6}>
-            <Typography variant="h2">About Us</Typography>
+          <Grid item md={6} className='text-align-end'>
+            <Typography variant="h2" style={{color:'black'}}>Our Services</Typography>
             <Typography paragraph>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ipsa unde saepe in incidunt impedit
               error, dolores voluptates exercitationem enim perferendis delectus molestias vel aperiam

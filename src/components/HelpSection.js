@@ -58,7 +58,7 @@ const HelpSection = () => {
 
           {/* Right Column: Form */}
           <Grid item xs={12} md={7} p={4}>
-            <Typography variant="h4" component="h2" gutterBottom>
+            <Typography variant="h4" component="h2" gutterBottom style={{color:'black'}}>
               How can I help you?
             </Typography>
             <form onSubmit={handleSubmit}>

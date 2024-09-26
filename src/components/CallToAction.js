@@ -24,17 +24,15 @@ const Footer = () => {
           </Grid>
 
           {/* Scan Code to WhatsApp */}
-          <Grid item xs={12} md={4} textAlign="center">
+          {/* <Grid item xs={12} md={4} textAlign="center">
             <Typography variant="h6" gutterBottom color="white">
               Scan Code to WhatsApp
             </Typography>
-            {/* Placeholder for QR code image */}
-            <img
-              src="https://via.placeholder.com/150" // Replace with your QR code image URL
+            <img// Replace with your QR code image URL
               alt="WhatsApp QR Code"
               style={{ width: '150px', height: '150px' }}
             />
-          </Grid>
+          </Grid> */}
 
           {/* Follow Us */}
           <Grid item xs={12} md={4}>
