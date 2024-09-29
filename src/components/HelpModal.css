@@ -1,22 +1,21 @@
 .help-icon {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #007bff;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 50px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .help-icon:hover {
-    background-color: #0056b3;
-  }
-  
-  .help-text {
-    font-size: 14px;
-  }
-  
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.help-icon:hover {
+  background-color: #0056b3;
+}
+
+.help-text {
+  font-size: 14px;
+}
