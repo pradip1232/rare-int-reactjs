@@ -20,6 +20,8 @@ function Home() {
         <>
             {/* <HelpModal /> */}
             <WhatsAppButton />
+
+
             <section className="first-section">
                 <video autoPlay muted loop>
                     <source src={videoFile} type="video/mp4" />
@@ -27,7 +29,8 @@ function Home() {
                 </video>
                 <div className="overlay-content">
                     <h1>Transforming Spaces, Crafting Experiences</h1>
-                    <p>Premium interior design and visual merchandising solutions for global luxury brands.</p>
+                    <p>Premium interior design and visual merchandising solutions
+                         for global luxury brands.</p>
                     <button style={{
                         backgroundColor: 'transparent', // Button background color
                         color: '#ffffff',           // Text color
