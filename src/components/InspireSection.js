@@ -22,8 +22,8 @@ const InspireSection = () => {
   }, []);
 
   return (
-    <div id="inspire-section" className="inspire-section ">
-      <div className={"text-center color-white container `inspire-content ${isVisible ? 'visible' : ''}`"} >
+    <div id="inspire-section" className="inspire-section " >
+      <div className={"text-center bg-dark-treanlent color-white container `inspire-content ${isVisible ? 'visible' : ''}`"}  >
         <h2>UNLEASH YOUR CREATIVITY WITH INSPIRO</h2>
         <p>
           This is some dummy copy. You're not really supposed to read this dummy copy,

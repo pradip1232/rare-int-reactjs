@@ -1,5 +1,7 @@
 import React from 'react';
 import videoFile from '../assets/img/video/vv.mp4'; // Import the video
+// import ff from './images/1.webp';
+import ff from './images/Untitled design_20241016_114518_0000.png';
 import './Home.css'; // Import the CSS file
 import ServicesSection from './ServicesSection';
 import PortfolioSection from './PortfolioSection';
@@ -23,10 +25,12 @@ function Home() {
 
 
             <section className="first-section">
-                <video autoPlay muted loop>
+                <img src={ff} />
+                {/* <video autoPlay muted loop>
+
                     <source src={videoFile} type="video/mp4" />
                     Your browser does not support the video tag.
-                </video>
+                </video> */}
                 <div className="overlay-content">
                     <h1>Transforming Spaces, Crafting Experiences</h1>
                     <p>Premium interior design and visual merchandising solutions
@@ -59,7 +63,7 @@ function Home() {
                     <p>
                     Experience the Rare Interior Group difference, where unparalleled quality and innovation come together to make your space truly extraordinary.
                     </p>
-                    <button className="about-us-btn" style={{ padding: '15px', backgroundColor: 'white' }}>
+                    <button className="about-us-btn" style={{ padding: '6px 20px', backgroundColor: 'white' }}>
                         About Us
                     </button>
                 </div>

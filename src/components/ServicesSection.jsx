@@ -28,8 +28,14 @@ const ImageContainer = styled("div")(({ theme }) => ({
   },
   "& .text-overlay": {
     position: "absolute",
-    bottom: "0",
-    left: "0",
+    bottom: "0%",
+    left: "0%",
+    // transform: "translateX(-50%)", // Center the text horizontally
+    padding: theme.spacing(2),
+    color: "#fff",
+    textAlign: "left",
+    backgroundColor: "rgba(0, 0, 0, 0.6)", // Semi-transparent background for better readability
+    // borderRadius: "8px", // Rounded corners
     width: "100%",
     padding: theme.spacing(2),
     color: "#fff",
@@ -89,10 +95,13 @@ const ServicesSection = () => {
 
   return (
     <section className="services">
-      <Typography variant="h3" className="text-left" gutterBottom>
+      <Typography variant="h3" className="text-left" gutterBottom style={{
+        fontSize: '18px',
+        color: '#0bb4aa',
+      }}>
         LET’S WORK TOGETHER!
       </Typography>
-      <Typography variant="h2" gutterBottom style={{ color: "black" }}>
+      <Typography variant="h2" gutterBottom style={{ color: "black", fontSize: "28px", fontWeight: "600" }}>
         Our Services
       </Typography>
       <Typography variant="body1" paragraph>
@@ -114,7 +123,7 @@ const ServicesSection = () => {
               <Typography variant="h5" gutterBottom>
                 Interior & Fit-out
               </Typography>
-              <ExploreButton>Explore Further</ExploreButton>
+              <ExploreButton className="explore-further">Explore Further</ExploreButton>
             </div>
           </ImageContainer>
         </div>
@@ -125,7 +134,7 @@ const ServicesSection = () => {
               <Typography variant="h5" gutterBottom>
                 Customized Furniture
               </Typography>
-              <ExploreButton>Explore Further</ExploreButton>
+              <ExploreButton className="explore-further">Explore Further</ExploreButton>
             </div>
           </ImageContainer>
         </div>
@@ -136,7 +145,7 @@ const ServicesSection = () => {
               <Typography variant="h5" gutterBottom>
                 Exhibition
               </Typography>
-              <ExploreButton>Explore Further</ExploreButton>
+              <ExploreButton className="explore-further">Explore Further</ExploreButton>
             </div>
           </ImageContainer>
         </div>
@@ -147,7 +156,7 @@ const ServicesSection = () => {
               <Typography variant="h5" gutterBottom>
                 Put the content in the same manner.{" "}
               </Typography>
-              <ExploreButton>Explore Further</ExploreButton>
+              <ExploreButton className="explore-further">Explore Further</ExploreButton>
             </div>
           </ImageContainer>
         </div>
@@ -158,7 +167,7 @@ const ServicesSection = () => {
               <Typography variant="h5" gutterBottom>
                 Packaging{" "}
               </Typography>
-              <ExploreButton>Explore Further</ExploreButton>
+              <ExploreButton className="explore-further">Explore Further</ExploreButton>
             </div>
           </ImageContainer>
         </div>
