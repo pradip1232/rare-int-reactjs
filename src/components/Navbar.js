@@ -1,12 +1,13 @@
+// NavbarComponent.js
 import React, { useEffect, useState } from "react";
 import { Navbar, Nav, Container, Offcanvas, Form, Button } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
-import { FaSearch } from 'react-icons/fa'; 
+import { FaSearch } from 'react-icons/fa';
 import './Navbar.css';
 
-function NavbarComponent() {
+function NavbarComponent({ scrollToBlog }) {
   const location = useLocation();
-  const [isExpanded, setIsExpanded] = useState(false); 
+  const [isExpanded, setIsExpanded] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
   const [navbarBg, setNavbarBg] = useState('transparent');
 
@@ -20,31 +21,25 @@ function NavbarComponent() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) { // When scrolled 50px or more
-        setNavbarBg('rgba(0, 0, 0, 0.8)'); // Light transparent black
+      if (window.scrollY > 50) {
+        setNavbarBg('rgba(0, 0, 0, 0.8)');
       } else {
-        setNavbarBg('transparent'); // Fully transparent when at the top
+        setNavbarBg('transparent');
       }
     };
 
     window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll); // Clean up
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Toggle navbar
   const handleToggle = () => {
     setIsExpanded(!isExpanded);
   };
 
-  // Close navbar on link click
   const handleNavItemClick = () => {
     setIsExpanded(false);
   };
 
-  // Toggle right sidebar
   const handleSidebarToggle = () => {
     setShowSidebar(!showSidebar);
   };
@@ -56,79 +51,48 @@ function NavbarComponent() {
         className="custom-navbar"
         fixed="top"
         expanded={isExpanded}
-        style={{ backgroundColor: navbarBg }} // Set background based on scroll
+        style={{ backgroundColor: navbarBg }}
       >
         <Container>
-          {/* Left-aligned Logo/Text */}
           <Navbar.Brand as={Link} to="/" className="brand">
             <strong>RareInterior</strong>
           </Navbar.Brand>
 
-          {/* Toggle Button */}
           <Navbar.Toggle
             aria-controls="responsive-navbar-nav"
-            onClick={handleToggle} // Toggle the navbar on button click
+            onClick={handleToggle}
           />
 
-          {/* Navbar Links */}
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="ml-auto"> {/* Aligns the Nav items to the right */}
-              <Nav.Link
-                as={Link}
-                to="/"
-                className="nav-link-custom"
-                onClick={handleNavItemClick} // Close the navbar on link click
-              >
+            <Nav className="ml-auto">
+              <Nav.Link as={Link} to="/" className="nav-link-custom" onClick={handleNavItemClick}>
                 Home
               </Nav.Link>
-              <Nav.Link
-                as={Link}
-                to="#"
-                className="nav-link-custom"
-                onClick={handleNavItemClick} // Close the navbar on link click
-              >
+              <Nav.Link as={Link} to="#" className="nav-link-custom" onClick={handleNavItemClick}>
                 Portfolio
               </Nav.Link>
-              <Nav.Link
-                as={Link}
-                to="#"
-                className="nav-link-custom"
-                onClick={handleNavItemClick} // Close the navbar on link click
-              >
+              <Nav.Link as={Link} to="#" className="nav-link-custom" >
                 Blog
               </Nav.Link>
-              <Nav.Link
-                as={Link}
-                to="#"
-                className="nav-link-custom"
-                onClick={handleNavItemClick} // Close the navbar on link click
-              >
+              <Nav.Link as={Link} to="#" className="nav-link-custom" onClick={scrollToBlog}>
                 About
               </Nav.Link>
-              <Nav.Link
-                as={Link}
-                to="#"
-                className="nav-link-custom"
-                onClick={handleNavItemClick} // Close the navbar on link click
-              >
+              <Nav.Link as={Link} to="#" className="nav-link-custom" onClick={handleNavItemClick}>
                 Contact
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
 
-          {/* Search Icon Button without border */}
           <Button variant="outline-none" className="search-button">
             <FaSearch />
           </Button>
 
-          {/* Sidebar Toggle Button */}
           <Button variant="outline-light" onClick={handleSidebarToggle}>
-            <span className="navbar-toggler-icon"></span> {/* Bootstrap toggle icon */}
+            <span className="navbar-toggler-icon"></span>
           </Button>
         </Container>
       </Navbar>
 
-      {/* Right Sidebar */}
       <Offcanvas show={showSidebar} onHide={handleSidebarToggle} placement="end">
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Sidebar Content</Offcanvas.Title>
@@ -136,8 +100,6 @@ function NavbarComponent() {
         <Offcanvas.Body>
           <h5>This is your right-side content</h5>
           <p>You can add any content here, such as links, forms, etc.</p>
-
-          {/* Example of a form inside the sidebar */}
           <Form>
             <Form.Group controlId="searchForm">
               <Form.Label>Search</Form.Label>

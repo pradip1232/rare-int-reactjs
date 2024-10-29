@@ -1,7 +1,7 @@
-import React from 'react';
-import videoFile from '../assets/img/video/vv.mp4'; // Import the video
+import React, { useRef } from 'react'; // Import useRef here
+import videoFile from './images/rare interior hero video.mp4'; // Import the video
 // import ff from './images/1.webp';
-import ff from './images/Untitled design_20241016_114518_0000.png';
+import ff from './images/rare interior hero new img without content.png';
 import './Home.css'; // Import the CSS file
 import ServicesSection from './ServicesSection';
 import PortfolioSection from './PortfolioSection';
@@ -16,52 +16,62 @@ import HelpSection from './HelpSection';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import WhatsAppButton from './WhatsAppButton';
 import InspireSection from './InspireSection';
+import NewPortfolioSection from './NewPortfolioSection';
+import NavbarComponent from './Navbar';
 
 function Home() {
+    const blogSectionRef = useRef(null);
+
+    const scrollToBlog = () => {
+        blogSectionRef.current?.scrollIntoView({ behavior: "smooth" });
+    };
+    const scrollToBlogP = () => {
+        blogSectionRef.current?.scrollIntoView({ behavior: "smooth" });
+    };
+
     return (
         <>
             {/* <HelpModal /> */}
             <WhatsAppButton />
-
+            <NavbarComponent scrollToBlog={scrollToBlog} />
 
             <section className="first-section">
-                <img src={ff} />
-                {/* <video autoPlay muted loop>
-
+                {/* <img src={ff} alt="Hero Section" /> */}
+                <video autoPlay muted loop>
                     <source src={videoFile} type="video/mp4" />
                     Your browser does not support the video tag.
-                </video> */}
+                </video>
                 <div className="overlay-content">
                     <h1>Transforming Spaces, Crafting Experiences</h1>
                     <p>Premium interior design and visual merchandising solutions
-                         for global luxury brands.</p>
+                        for global luxury brands.</p>
                     <button style={{
-                        backgroundColor: 'transparent', // Button background color
-                        color: '#ffffff',           // Text color
-                        padding: '12px 24px',      // Button padding
-                        border: '1px solid white',             // Remove border
-                        borderRadius: '5px',       // Rounded corners
-                        cursor: 'pointer',          // Pointer cursor on hover
-                        fontSize: '16px',           // Font size
-                        transition: 'background-color 0.3s', // Smooth background change
-                        marginTop: '10px'           // Margin for spacing
+                        backgroundColor: 'transparent',
+                        color: '#ffffff',
+                        padding: '12px 24px',
+                        border: '1px solid white',
+                        borderRadius: '5px',
+                        cursor: 'pointer',
+                        fontSize: '16px',
+                        transition: 'background-color 0.3s',
+                        marginTop: '10px'
                     }}>
                         Start Your Journey
                     </button>
                 </div>
             </section>
 
-            <section className="second-section">
+            <section className="second-section" id="blog" ref={blogSectionRef}>
                 <div className="container text-center py-5">
-                    <h2 className="fw-bold1" style={{ color: 'black' }}>Our Company</h2>
+                    <h2 className="fw-bold1" style={{ color: 'black' }}>About Us</h2>
                     <p className="lead2 mt-3">
                         Rare Interior Group, a leading UAE-based company founded in 2018. With over 7 years of expertise, we specialize in delivering exceptional visual merchandising solutions for retail jewelry stores, dynamic exhibitions, and bespoke interior designs for both residential and commercial spaces.
                     </p>
                     <p>
-                    Our accomplished team of top designers employs a meticulous approach to create visual narratives that reflect your unique aspirations and elevate your brand’s presence. Having completed over 1,000 projects worldwide, we are dedicated to transforming your vision into our mission.
+                        Our accomplished team of top designers employs a meticulous approach to create visual narratives that reflect your unique aspirations and elevate your brand’s presence. Having completed over 1,000 projects worldwide, we are dedicated to transforming your vision into our mission.
                     </p>
                     <p>
-                    Experience the Rare Interior Group difference, where unparalleled quality and innovation come together to make your space truly extraordinary.
+                        Experience the Rare Interior Group difference, where unparalleled quality and innovation come together to make your space truly extraordinary.
                     </p>
                     <button className="about-us-btn" style={{ padding: '6px 20px', backgroundColor: 'white' }}>
                         About Us
@@ -69,15 +79,13 @@ function Home() {
                 </div>
             </section>
 
-
-
             <ServicesSection />
             <PortfolioSection />
             <AboutSection />
             <BlackSection />
-            {/* <TestimonialsSection /> */}
+            <NewPortfolioSection />
+            <TestimonialsSection />
             {/* <MeetTeamSection /> */}
-
             <InspireSection />
             <HelpSection />
             <CallToAction />

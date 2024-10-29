@@ -8,7 +8,7 @@ import third from "./images/12 (1).webp";
 // Styled component for the image container
 const ImageContainer = styled("div")(({ theme }) => ({
   position: "relative",
-  height: "400px", // Set a fixed height for the images
+  height: "410px", // Set a fixed height for the images
   overflow: "hidden",
   transition: "transform 0.3s ease-in-out", // Smooth hover effect
   "&:hover": {
@@ -27,12 +27,11 @@ const ImageContainer = styled("div")(({ theme }) => ({
     padding: theme.spacing(2),
     color: "#fff",
     textAlign: "left",
-    // backgroundColor: "rgba(0, 0, 0, 0.6)", // Semi-transparent background for better readability
     borderRadius: "8px", // Rounded corners
     width: "80%",
   },
   "&:hover .text-overlay": {
-    textAlign:'center',
+    textAlign: 'center',
     backgroundColor: "rgba(0, 0, 0, 0.8)", // Darker background on hover
   },
 }));
@@ -43,22 +42,19 @@ const PortfolioSection = () => {
       <Typography
         variant="h2"
         gutterBottom
-        style={{ color: "black", textAlign: "center", marginBottom: "2rem" }}
+        style={{ color: "black", textAlign: "center", marginBottom: "5px" }}
       >
-        Our Portfolio
+        Our Design Process
       </Typography>
       <Typography
         variant="body1"
         paragraph
         style={{ maxWidth: "800px", margin: "0 auto", textAlign: "center" }}
       >
-        Over the years, we’ve had the privilege of working with some of the most
-        prestigious brands across the globe. From creating bespoke retail
-        environments to designing luxurious living spaces, our work speaks for
-        itself.
+        At Rare Interior Group, collaboration is at the heart of everything we do. We listen, interpret, and translate your ideas into reality, ensuring every project reflects the unique aspirations of our clients.
       </Typography>
 
-      <Grid container spacing={4} justifyContent="center">
+      <Grid container spacing={1} justifyContent="center">
         <Grid item xs={12} sm={4}>
           <ImageContainer>
             <img src={first} alt="Portfolio Image 1" />
