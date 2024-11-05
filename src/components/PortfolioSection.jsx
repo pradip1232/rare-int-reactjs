@@ -8,11 +8,11 @@ import third from "./images/12 (1).webp";
 // Styled component for the image container
 const ImageContainer = styled("div")(({ theme }) => ({
   position: "relative",
-  height: "410px", // Set a fixed height for the images
+  height: "410px",
   overflow: "hidden",
-  transition: "transform 0.3s ease-in-out", // Smooth hover effect
+  transition: "transform 0.3s ease-in-out",
   "&:hover": {
-    transform: "scale(1.05)", // Scale up on hover
+    transform: "scale(1.05)", // Slight scale effect on hover
   },
   "& img": {
     width: "100%",
@@ -21,20 +21,24 @@ const ImageContainer = styled("div")(({ theme }) => ({
   },
   "& .text-overlay": {
     position: "absolute",
-    bottom: "10%",
+    bottom: "-30%", // Start slightly below the visible area
     left: "50%",
-    transform: "translateX(-50%)", // Center the text horizontally
+    transform: "translateX(-50%)",
     padding: theme.spacing(2),
     color: "#fff",
-    textAlign: "left",
-    borderRadius: "8px", // Rounded corners
+    textAlign: "center",
+    borderRadius: "8px",
     width: "80%",
+    backgroundColor: "rgba(0, 0, 0, 0.6)", // Semi-transparent background
+    transition: "bottom 0.3s ease, background-color 0.3s ease",
   },
   "&:hover .text-overlay": {
-    textAlign: 'center',
+    bottom: "10%", // Move it to 10% from the bottom
     backgroundColor: "rgba(0, 0, 0, 0.8)", // Darker background on hover
   },
 }));
+
+
 
 const PortfolioSection = () => {
   return (

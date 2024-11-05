@@ -24,6 +24,9 @@ function Home() {
     const scrollToBlog = () => {
         blogSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
     };
+    const clickContact = () => {
+        blogSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+    };
 
     const titleVariants = {
         hidden: { opacity: 0, y: -20 },
@@ -38,33 +41,53 @@ function Home() {
     return (
         <>
             <WhatsAppButton />
+            <NavbarComponent clickContact={clickContact} />
             <NavbarComponent scrollToBlog={scrollToBlog} />
 
             <section className="first-section">
-                <video autoPlay muted loop>
-                    <source src={videoFile} type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video>
-                <div className="overlay-content">
-                    <h1>Transforming Spaces, Crafting Experiences</h1>
-                    <p>Premium interior design and visual merchandising solutions for global luxury brands.</p>
-                    <button
+                <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
+                    <video autoPlay muted loop style={{ width: '100%', height: '100vh', objectFit: 'cover' }}>
+                        <source src={videoFile} type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                    <div
                         style={{
-                            backgroundColor: 'transparent',
-                            color: '#ffffff',
-                            padding: '12px 24px',
-                            border: '1px solid white',
-                            borderRadius: '5px',
-                            cursor: 'pointer',
-                            fontSize: '16px',
-                            transition: 'background-color 0.3s',
-                            marginTop: '10px',
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            width: '100%',
+                            height: '100%',
+                            backgroundColor: 'rgba(0, 0, 0, 0.6)', // Full overlay
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            color: 'white',
+                            textAlign: 'center',
+                            padding: '20px',
                         }}
                     >
-                        Start Your Journey
-                    </button>
+                        <h1>Transforming Spaces, Crafting Experiences</h1>
+                        <p>Premium interior design and visual merchandising solutions for global luxury brands.</p>
+                        <button
+                            style={{
+                                backgroundColor: 'transparent',
+                                color: '#ffffff',
+                                padding: '12px 24px',
+                                border: '1px solid white',
+                                borderRadius: '5px',
+                                cursor: 'pointer',
+                                fontSize: '16px',
+                                transition: 'background-color 0.3s',
+                                marginTop: '10px',
+                            }}
+                        >
+                            Start Your Journey
+                        </button>
+                    </div>
                 </div>
             </section>
+
 
             <section className="second-section" id="blog" ref={blogSectionRef}>
                 <div className="container text-center py-5">
@@ -76,7 +99,7 @@ function Home() {
                         animate="visible"
                         transition={{ duration: 0.5 }} // Duration for fade-in
                     >
-                        About Us
+                        About Rare Interior Group
                     </motion.h2>
 
                     <motion.p
@@ -86,35 +109,23 @@ function Home() {
                         animate="visible"
                         transition={{ duration: 0.5, delay: 0.2 }} // Adding delay for staggered effect
                     >
-                        Rare Interior Group, a leading UAE-based company founded in 2018. With over 7 years of expertise, we specialize in delivering exceptional visual merchandising solutions for retail jewelry stores, dynamic exhibitions, and bespoke interior designs for both residential and commercial spaces.
-                    </motion.p>
+                        Welcome to Rare Interior Group, where luxury and innovation converge.
+                        Specializing in creating exquisite interior spaces and captivating
+                        visual merchandising displays, we are dedicated to bringing your vision
+                        to life with unmatched quality. Operating across the GCC, we also serve
+                        a diverse clientele in Hong Kong, Saudi Arabia, and India, delivering
+                        excellence in every project. Discover how our expertise and global reach
+                        can transform your space into an extraordinary experience.
+                        </motion.p>
 
-                    <motion.p
-                        variants={textVariants}
-                        initial="hidden"
-                        animate="visible"
-                        transition={{ duration: 0.5, delay: 0.4 }} // Increasing delay for second paragraph
-                    >
-                        Our accomplished team of top designers employs a meticulous approach to create visual narratives that reflect your unique aspirations and elevate your brand’s presence. Having completed over 1,000 projects worldwide, we are dedicated to transforming your vision into our mission.
-                    </motion.p>
-
-                    <motion.p
-                        variants={textVariants}
-                        initial="hidden"
-                        animate="visible"
-                        transition={{ duration: 0.5, delay: 0.6 }} // Increasing delay for third paragraph
-                    >
-                        Experience the Rare Interior Group difference, where unparalleled quality and innovation come together to make your space truly extraordinary.
-                    </motion.p>
-
-                    <motion.button
-                        className="about-us-btn"
-                        style={{ padding: '6px 20px', backgroundColor: 'white' }}
-                        whileHover={{ scale: 1.05 }} // Scale effect on hover
-                        whileTap={{ scale: 0.95 }} // Scale effect on tap
-                    >
-                        About Us
-                    </motion.button>
+                        <motion.button
+                            className="about-us-btn"
+                            style={{ padding: '6px 20px', backgroundColor: 'white' }}
+                            whileHover={{ scale: 1.05 }} // Scale effect on hover
+                            whileTap={{ scale: 0.95 }} // Scale effect on tap
+                        >
+                            About Us
+                        </motion.button>
                 </div>
             </section>
 

@@ -30,17 +30,21 @@ const ImageContainer = styled("div")(({ theme }) => ({
   },
   "& .text-overlay": {
     position: "absolute",
-    bottom: "0%",
-    left: "0%",
+    bottom: "-100%", // Start hidden below the image
+    left: "0",
+    width: "100%",
     padding: theme.spacing(2),
     color: "#fff",
+    backgroundColor: "rgba(0, 0, 0, 0.6)", // Semi-transparent background
     textAlign: "left",
-    backgroundColor: "rgba(0, 0, 0, 0.6)",
-    width: "100%",
-    transition: "background 0.3s ease-in-out",
+    transition: "bottom 0.3s ease-in-out", // Animate from bottom to top
+  },
+  "&:hover .text-overlay": {
+    bottom: "0", // Slide up to fully show the overlay on hover
   },
 }));
 
+// The button styling remains the same as before
 const ExploreButton = styled("a")(({ theme }) => ({
   display: "inline-block",
   padding: "8px 16px",
@@ -68,6 +72,8 @@ const ExploreButton = styled("a")(({ theme }) => ({
     opacity: "1",
   },
 }));
+
+
 
 const ServicesSection = () => {
   const { ref, inView } = useInView({
@@ -116,13 +122,7 @@ const ServicesSection = () => {
           Our expertise
         </Typography>
         <Typography variant="body1" paragraph>
-          Welcome to Rare Interior Group, where luxury and innovation converge.
-          Specializing in creating exquisite interior spaces and captivating
-          visual merchandising displays, we are dedicated to bringing your vision
-          to life with unmatched quality. Operating across the GCC, we also serve
-          a diverse clientele in Hong Kong, Saudi Arabia, and India, delivering
-          excellence in every project. Discover how our expertise and global reach
-          can transform your space into an extraordinary experience.
+        
         </Typography>
 
         <Slider {...settings}>

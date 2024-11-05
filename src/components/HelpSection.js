@@ -43,7 +43,7 @@ const HelpSection = () => {
   };
 
   return (
-    <Container maxWidth={false} disableGutters> {/* Full-width container */}
+    <Container maxWidth={false} disableGutters  > {/* Full-width container */}
       <Box component="section" p={4} boxShadow={3} borderRadius={2} bgcolor="#f9f9f9">
         <Grid container>
           {/* Left Column: Icon and Text */}

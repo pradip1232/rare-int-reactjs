@@ -24,11 +24,9 @@ const InspireSection = () => {
   return (
     <div id="inspire-section" className="inspire-section " >
       <div className={"text-center bg-dark-treanlent color-white container `inspire-content ${isVisible ? 'visible' : ''}`"}  >
-        <h2>UNLEASH YOUR CREATIVITY WITH INSPIRO</h2>
+        <h2>Get in Touch</h2>
         <p>
-          This is some dummy copy. You're not really supposed to read this dummy copy,
-          it is just a placeholder for people who need some type to visualize what the
-          actual copy might look like if it were real content.
+          Whether you're looking to redesign your space or create an unforgettable visual display, we're here to help
         </p>
         <button className="contact-button">CONTACT US</button>
       </div>
