@@ -19,7 +19,7 @@ const Footer = () => {
               Phone: +123 456 7890
             </Typography>
             <Typography variant="body1" color="white">
-              Email: info@rareinteriorgroup.com
+              {/* Email: info@rareinteriorgroup.com */}
             </Typography>
           </Grid>
 
