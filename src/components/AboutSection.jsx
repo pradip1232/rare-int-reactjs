@@ -48,12 +48,13 @@ const AnimatedImage = ({ src, alt, ...props }) => (
     style={{
       width: '100%',
       height: 'auto',
-      borderRadius: '15px',
+      // borderRadius: '15px',
       objectFit: 'cover',
       overflow: 'hidden'
     }}
   />
 );
+
 
 const AboutSection = () => {
   const [currentImage, setCurrentImage] = useState(imageArray[0]);

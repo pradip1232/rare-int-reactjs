@@ -24,20 +24,20 @@ const NewPortfolioSection = () => {
     ];
 
     const sliderSettings = {
-        dots: true,             
-        infinite: true,         
-        speed: 500,             
-        slidesToShow: 3,        
-        slidesToScroll: 1,      
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 3,
+        slidesToScroll: 1,
         responsive: [
             {
-                breakpoint: 768,     
+                breakpoint: 768,
                 settings: {
                     slidesToShow: 1,
                 },
             },
             {
-                breakpoint: 1024,    
+                breakpoint: 1024,
                 settings: {
                     slidesToShow: 2,
                 },
@@ -46,12 +46,20 @@ const NewPortfolioSection = () => {
     };
 
     return (
-        <Container fluid className="my-5 px-4"> {/* Added fluid and padding */}
+        <Container className="my-5 px-4">
             <Slider {...sliderSettings}>
                 {projects.map((project) => (
-                    <div key={project.id} style={{ padding: '5px' }}> {/* Adjusted for 10px total gap */}
-                        <Card className='border-0' style={{borderRadius:'0px!important',}}>
-                            <Card.Img variant="top" className='border-0' style={{borderRadius:'0px 0px 0px 0px!important' ,}} src={project.img} />
+                    <div key={project.id} className="px-2"> {/* 5px gap achieved by px-2 */}
+                        <Card
+                            className="rounded-0"
+                            style={{
+                                width: '300px', // Fixed width of 300px
+                                boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)', // Box shadow for elevation
+                               
+                                border: '4px inset rgba(0, 0, 0, 0.2)', // Inset inner border
+                            }}
+                        >
+                            <Card.Img variant="top" className="border-0 rounded-0" src={project.img} />
                         </Card>
                     </div>
                 ))}

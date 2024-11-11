@@ -134,6 +134,7 @@ function Home() {
             <PortfolioSection />
             <AboutSection />
             <BlackSection />
+            
             <NewPortfolioSection />
             <TestimonialsSection />
             <InspireSection />

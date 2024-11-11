@@ -8,6 +8,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import './App.css';
 import TestimonialsSection from './components/TestimonialsSection';
+import ChatbotModal from './components/ChatbotModal';
 
 function App() {
   return (
@@ -21,7 +22,10 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/testing" element={<TestimonialsSection />} />
+          <Route path="/chatbot" element={<ChatbotModal />} />
+          
         </Routes>
+        
       </div>
     </Router>
   );
