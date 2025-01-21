@@ -44,6 +44,27 @@ function Home() {
             <NavbarComponent clickContact={clickContact} />
             <NavbarComponent scrollToBlog={scrollToBlog} />
 
+            <style>
+                {`
+                        .hover-button {
+                            background-color: transparent;
+                            color: #ffffff;
+                            padding: 12px 24px;
+                            border: 1px solid white;
+                            border-radius: 5px;
+                            cursor: pointer;
+                            font-size: 16px;
+                            transition: background-color 0.3s, color 0.3s;
+                            margin-top: 10px;
+                        }
+
+                        .hover-button:hover {
+                            background-color: white;
+                            color: black;
+                        }
+                        `}
+            </style>
+
             <section className="first-section">
                 <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
                     <video autoPlay muted loop style={{ width: '100%', height: '100vh', objectFit: 'cover' }}>
@@ -57,7 +78,7 @@ function Home() {
                             left: 0,
                             width: '100%',
                             height: '100%',
-                            backgroundColor: 'rgba(0, 0, 0, 0.6)', // Full overlay
+                            backgroundColor: 'rgba(0, 0, 0, 0.6)',
                             display: 'flex',
                             flexDirection: 'column',
                             justifyContent: 'center',
@@ -67,22 +88,10 @@ function Home() {
                             padding: '20px',
                         }}
                     >
-                        <h1>Transforming Spaces, Crafting Experiences</h1>
-                        <p>Premium interior design and visual merchandising solutions for global luxury brands.</p>
-                        <button
-                            style={{
-                                backgroundColor: 'transparent',
-                                color: '#ffffff',
-                                padding: '12px 24px',
-                                border: '1px solid white',
-                                borderRadius: '5px',
-                                cursor: 'pointer',
-                                fontSize: '16px',
-                                transition: 'background-color 0.3s',
-                                marginTop: '10px',
-                            }}
-                        >
-                            Start Your Journey
+                        <h1>Designing Dreams, Elevating Brands</h1>
+                        <p>Luxury Interior Design and Visual Merchandising Solutions Tailored to Perfection</p>
+                        <button className="hover-button">
+                            Explore Our Creations
                         </button>
                     </div>
                 </div>
@@ -109,23 +118,17 @@ function Home() {
                         animate="visible"
                         transition={{ duration: 0.5, delay: 0.2 }} // Adding delay for staggered effect
                     >
-                        Welcome to Rare Interior Group, where luxury and innovation converge.
-                        Specializing in creating exquisite interior spaces and captivating
-                        visual merchandising displays, we are dedicated to bringing your vision
-                        to life with unmatched quality. Operating across the GCC, we also serve
-                        a diverse clientele in Hong Kong, Saudi Arabia, and India, delivering
-                        excellence in every project. Discover how our expertise and global reach
-                        can transform your space into an extraordinary experience.
-                        </motion.p>
+                        Welcome to Rare Interior Group, where luxury, innovation, and sustainability come together. We specialize in designing exceptional interior spaces and creating impactful visual merchandising displays that seamlessly blend aesthetics with functionality. With a commitment to quality and cutting-edge design, we bring your vision to life through solutions that inspire and endure. Serving clients across the GCC, Hong Kong, Saudi Arabia, and India, we deliver transformative designs with a global perspective. Discover how our expertise can elevate your space and redefine your brand.
+                    </motion.p>
 
-                        <motion.button
-                            className="about-us-btn"
-                            style={{ padding: '6px 20px', backgroundColor: 'white' }}
-                            whileHover={{ scale: 1.05 }} // Scale effect on hover
-                            whileTap={{ scale: 0.95 }} // Scale effect on tap
-                        >
-                            About Us
-                        </motion.button>
+                    {/* <motion.button
+                        className="about-us-btn"
+                        style={{ padding: '6px 20px', backgroundColor: 'white' }}
+                        whileHover={{ scale: 1.05 }} // Scale effect on hover
+                        whileTap={{ scale: 0.95 }} // Scale effect on tap
+                    >
+                        About Us
+                    </motion.button> */}
                 </div>
             </section>
 
@@ -134,7 +137,7 @@ function Home() {
             <PortfolioSection />
             <AboutSection />
             <BlackSection />
-            
+
             <NewPortfolioSection />
             <TestimonialsSection />
             <InspireSection />

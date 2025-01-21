@@ -6,14 +6,25 @@ import styled from '@emotion/styled';
 import about1 from './images/about us img.png';
 import about2 from './images/our service rare interior.png';
 
-import aa from './images/ss/12 (1).webp';
-import a from './images/ss/13 (2).webp';
-// import bb from './images/ss/10 (1).webp';
-import cc from './images/ss/9 (1).webp';
-import dd from './images/ss/8 (1).webp';
-import ee from './images/ss/7 (1).webp';
 
-const imageArray = [aa, a, cc, dd, ee];
+
+
+
+
+
+import f1 from './images/services/14.webp';
+import f2 from './images/services/15.webp';
+import f3 from './images/services/16.webp';
+import f4 from './images/services/17.webp';
+import f5 from './images/services/18.webp';
+import f6 from './images/services/19.webp';
+import f7 from './images/services/20.webp';
+import f8 from './images/services/21.webp';
+import f9 from './images/services/22.webp';
+import f10 from './images/services/23.webp';
+
+
+const imageArray = [f1, f2, f3, f4, f5, f6, f7, f8, f9, f10];
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 30 },
@@ -46,7 +57,7 @@ const AnimatedImage = ({ src, alt, ...props }) => (
     alt={alt}
     {...props}
     style={{
-      width: '100%',
+      width: '88%',
       height: 'auto',
       // borderRadius: '15px',
       objectFit: 'cover',
@@ -82,14 +93,32 @@ const AboutSection = () => {
                 viewport={{ once: true }}
               >
                 <Typography variant="h2" style={{ color: 'black' }}>About Us</Typography>
-                <Typography paragraph>
-                  Rare Interior Group, a leading UAE-based company founded in 2018. With over 7 years
-                  of expertise, we specialize in delivering exceptional visual merchandising solutions
-                  for retail jewelry stores, dynamic exhibitions, and bespoke interior designs for both residential and commercial spaces.
+                <Typography paragraph className="text-justify">
+                  Rare Interior Group has been a leader in interior design and visual merchandising since 2018. With a commitment to quality, we deliver high-end residential and commercial spaces across the UAE.
+                  <b>
+
+                    Our Expertise
+                  </b>
+                  We specialize in
+                  ,Retail stores
+                  ,Exhibitions
+                  ,Offices
+                  ,Villas and apartments
+
+                  From concept to completion, we manage all aspects, including design, execution, and authority approvals, ensuring your project is handled with precision.
+                  <b>
+
+                    Our Promise
+                  </b>
+                  We prioritize quality over quantity by working on a limited number of projects, allowing us to focus on:
+                  , Personalized solutions
+                  , Attention to detail
+                  , Functional and aesthetic excellence
+                  Experience a seamless journey from vision to reality with Rare Interior Group
+                  {/* <Button variant="outlined" color="primary" style={{ padding: '15px' }}>
+                    About Us
+                  </Button> */}
                 </Typography>
-                <Button variant="outlined" color="primary" style={{ padding: '15px' }}>
-                  About Us
-                </Button>
               </motion.div>
             </Grid>
             <Grid item md={6}>

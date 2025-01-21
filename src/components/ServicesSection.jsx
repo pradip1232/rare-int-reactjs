@@ -9,7 +9,7 @@ import first from "./images/5 (1).webp";
 import second from "./images/eee.jpg";
 import third from "./images/7 (1).webp";
 import fourth from "./images/ee.jpg";
-import fifth from "./images/9 (1).webp";
+import fifth from "./images/34.webp";
 
 // Import slick-carousel CSS
 import "slick-carousel/slick/slick.css";
@@ -82,6 +82,33 @@ const ServicesSection = () => {
   });
 
   // Slick slider settings
+
+
+
+  const data = [
+    {
+      title: "Retail Solutions",
+      description: "Turn retail spaces into storytelling platforms with immersive displays that captivate and inspire."
+    },
+    {
+      title: "Interior & Fit-out",
+      description: "Crafting bespoke interiors that redefine spaces with elegance and purpose."
+    },
+    {
+      title: "Customized Furniture",
+      description: "Exclusive handcrafted furniture that reflects your unique style and enhances your space."
+    },
+    {
+      title: "Exhibition Stands",
+      description: "Create striking, custom-built exhibition stands that leave a lasting impression and highlight your brand."
+    },
+    {
+      title: "Packaging",
+      description: "Design innovative and visually appealing packaging solutions that enhance your product’s appeal and reinforce brand identity."
+    }
+  ];
+
+
   const settings = {
     dots: true,
     infinite: true,
@@ -122,7 +149,7 @@ const ServicesSection = () => {
           Our expertise
         </Typography>
         <Typography variant="body1" paragraph>
-        
+
         </Typography>
 
         <Slider {...settings}>
@@ -136,9 +163,14 @@ const ServicesSection = () => {
               <ImageContainer>
                 <img src={image} alt={`Slide ${index + 1}`} />
                 <div className="text-overlay">
+                  {/* // Display dynamically based on index */}
                   <Typography variant="h5" gutterBottom>
-                    {["Retail Solutions", "Interior & Fit-out", "Customized Furniture", "Packaging", "Exhibition Stands"][index]}
+                    {data[index].title}
                   </Typography>
+                  <Typography variant="body1">
+                    {data[index].description}
+                  </Typography>
+
                   <ExploreButton className="explore-further">Explore Further</ExploreButton>
                 </div>
               </ImageContainer>

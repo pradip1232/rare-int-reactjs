@@ -13,10 +13,11 @@ const Footer = () => {
               Contact Information
             </Typography>
             <Typography variant="body1" color="white">
-              123 Street Name, City, Country
+              Al Jurf 2 Askan Holding- Shaikh Rashid Bin Abdul Aziz Aaemi St - Ajman
             </Typography>
             <Typography variant="body1" color="white">
-              Phone: +123 456 7890
+              Phone: 00971-556638055 ,
+              00971- 504574891
             </Typography>
             <Typography variant="body1" color="white">
               {/* Email: info@rareinteriorgroup.com */}
@@ -75,7 +76,7 @@ const Footer = () => {
                 <Twitter fontSize="large" />
               </IconButton>
               <IconButton
-                href="https://instagram.com"
+                href="https://www.instagram.com/rare__interior?igsh=ZzA4MzhscmZudjhv"
                 target="_blank"
                 sx={{ animation: 'rotateIcon 2s infinite alternate', color: 'white' }}
               >
