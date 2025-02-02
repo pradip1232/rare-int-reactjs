@@ -41,8 +41,13 @@ function Home() {
     return (
         <>
             <WhatsAppButton />
-            <NavbarComponent clickContact={clickContact} />
-            <NavbarComponent scrollToBlog={scrollToBlog} />
+
+
+            {/* <NavbarComponent
+                clickContact={clickContact}
+                scrollToBlog={scrollToBlog}
+            /> */}
+
 
             <style>
                 {`

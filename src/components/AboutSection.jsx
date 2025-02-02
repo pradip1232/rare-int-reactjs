@@ -93,32 +93,36 @@ const AboutSection = () => {
                 viewport={{ once: true }}
               >
                 <Typography variant="h2" style={{ color: 'black' }}>About Us</Typography>
-                <Typography paragraph className="text-justify">
+                <Typography paragraph variant="h7" className="text-justify about-section-text-section">
                   Rare Interior Group has been a leader in interior design and visual merchandising since 2018. With a commitment to quality, we deliver high-end residential and commercial spaces across the UAE.
+                  <br />
                   <b>
-
-                    Our Expertise
+                    <span className="span-our">
+                      Our Expertise
+                    </span>
+                    <br />
+                    We specialize in:
+                    Retail stores, Exhibitions, Offices, Villas, and apartments
                   </b>
-                  We specialize in
-                  ,Retail stores
-                  ,Exhibitions
-                  ,Offices
-                  ,Villas and apartments
+                  <br />
 
                   From concept to completion, we manage all aspects, including design, execution, and authority approvals, ensuring your project is handled with precision.
+                  <br />
                   <b>
-
-                    Our Promise
+                    <span className=" span-our">
+                      Our Promise
+                    </span>
                   </b>
+                  <br />
                   We prioritize quality over quantity by working on a limited number of projects, allowing us to focus on:
-                  , Personalized solutions
-                  , Attention to detail
-                  , Functional and aesthetic excellence
-                  Experience a seamless journey from vision to reality with Rare Interior Group
-                  {/* <Button variant="outlined" color="primary" style={{ padding: '15px' }}>
-                    About Us
-                  </Button> */}
+                  <br />
+                  <b>
+                    Personalized solutions, Attention to detail, Functional and aesthetic excellence
+                  </b>
+                  <br />
+                  Experience a seamless journey from vision to reality with Rare Interior Group.
                 </Typography>
+
               </motion.div>
             </Grid>
             <Grid item md={6}>

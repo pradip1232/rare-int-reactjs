@@ -4,7 +4,8 @@ import { Navbar, Nav, Container, Offcanvas, Form, Button } from 'react-bootstrap
 import { Link, useLocation } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa';
 import './Navbar.css';
-
+import { Helmet } from "react-helmet";
+import logotitle from './images/RARE INTERIOR LOGO.webp';
 function NavbarComponent({ scrollToBlog }) {
   const location = useLocation();
   const [isExpanded, setIsExpanded] = useState(false);
@@ -46,6 +47,10 @@ function NavbarComponent({ scrollToBlog }) {
 
   return (
     <>
+      <Helmet>
+        <link rel="icon" href={logotitle} />
+
+      </Helmet>
       <Navbar
         expand="lg"
         className="custom-navbar"
@@ -55,11 +60,13 @@ function NavbarComponent({ scrollToBlog }) {
       >
         <Container>
           <Navbar.Brand as={Link} to="/" className="brand">
-            <strong>RareInterior</strong>
+            {/* <strong>RareInterior</strong> */}
+            <img src={logotitle} className="img-fluid logo-img" />
           </Navbar.Brand>
 
           <Navbar.Toggle
             aria-controls="responsive-navbar-nav"
+            className="d-block d-md-none"
             onClick={handleToggle}
           />
 
@@ -83,11 +90,15 @@ function NavbarComponent({ scrollToBlog }) {
             </Nav>
           </Navbar.Collapse>
 
-          <Button variant="outline-none" className="search-button">
+          <Button variant="outline-none" className="search-button d-none d-md-block">
             <FaSearch />
           </Button>
 
-          <Button variant="outline-light" onClick={handleSidebarToggle}>
+          <Button
+            variant="outline-light"
+            className="d-none d-md-block"
+            onClick={handleSidebarToggle}
+          >
             <span className="navbar-toggler-icon"></span>
           </Button>
         </Container>

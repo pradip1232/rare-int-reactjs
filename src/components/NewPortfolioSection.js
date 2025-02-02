@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card, Container } from 'react-bootstrap';
 import Slider from 'react-slick';
 
@@ -66,32 +66,57 @@ const NewPortfolioSection = () => {
             {
                 breakpoint: 768,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 2,
                 },
             },
             {
                 breakpoint: 1024,
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 3,
                 },
             },
         ],
     };
 
+
+    const [cardWidth, setCardWidth] = useState("348px");
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= 1440) {
+                setCardWidth("408px");
+            } else if (window.innerWidth >= 1124) {
+                setCardWidth("329px");
+            } else if (window.innerWidth >= 1024) {
+                setCardWidth("290px");
+            } else {
+                setCardWidth("290px");
+            }
+        };
+        // Initial check and add resize event listener
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        // Cleanup on unmount
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
     return (
         <Container className="my-5 px-4">
             <Slider {...sliderSettings}>
                 {projects.map((project) => (
-                    <div key={project.id} className="px-2">
+                    <div key={project.id} className="">
                         <Card
                             className="rounded-0"
                             style={{
-                                width: '325px',
-                                boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)',
-                                border: '4px inset rgba(0, 0, 0, 0.2)',
+                                width: cardWidth,
+                                boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+                                border: "4px inset rgba(0, 0, 0, 0.2)",
                             }}
                         >
-                            <Card.Img variant="top" className="border-0 rounded-0" src={project.img} />
+                            <Card.Img
+                                variant="top"
+                                className="border-0 rounded-0"
+                                src={project.img}
+                            />
                         </Card>
                     </div>
                 ))}
